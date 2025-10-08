@@ -1,0 +1,63 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Wrist Auth module"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Wrist Auth"
+    },
+    {
+      "name": "totp_accounts",
+      "value": "TOTP Accounts"
+    },{
+      "name": "empty_accounts_message",
+      "value": "Empty TOTP Accounts.\nTap on\n'New Account'\nto add an Account"
+    },
+    {
+      "name": "new_account",
+      "value": "New Account"
+    },
+    {
+      "name": "new_account_title",
+      "value": "Add New Account"
+    },
+    {
+      "name": "add_account",
+      "value": "Add Account"
+    },
+    {
+      "name": "totp_issuer",
+      "value": "Issuer:"
+    },
+    {
+      "name": "totp_label",
+      "value": "Label:"
+    },
+    {
+      "name": "enter_your_key",
+      "value": "Enter your key"
+    },
+    {
+      "name": "invalid_secret_key",
+      "value": "Invalid account key"
+    },
+    {
+      "name": "empty_secret_key",
+      "value": "Please enter account key"
+    },
+    {
+      "name": "select_issuer",
+      "value": "Please select issuer"
+    },
+    {
+      "name": "select_label",
+      "value": "Please select label"
+    }
+  ]
+}
