@@ -10,7 +10,7 @@ export interface TotpOptions {
 
 export class TotpManager {
   /**
-   * Generates a TOTP code as a zero-padded string (e.g., "012345").
+   * Generates a TOTP code as a zero-padded string (e.g., '012345').
    */
   static async generateTOTPCodeString(
     secretBase32: string,
