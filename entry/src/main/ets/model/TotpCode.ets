@@ -8,5 +8,5 @@ export interface TotpCode {
   algorithm: string,
   digits: number,
   period: number,
-  createdAt: string,
+  createdAt: string
 }

@@ -34,10 +34,13 @@ export default class TotpScheduler implements Injectable {
       // Batch async code generations
       const jobs: Array<Promise<void>> = [];
 
+      const defCodePeriod = Constants.DEFAULT_CODE_PERIOD;
+      const defCodeDigits = Constants.DEFAULT_CODE_DIGITS;
+      const defCodeAlgo = Constants.DEFAULT_CODE_ALGO;
       for (const it of items) {
-        const period = it.period ?? Constants.DEFAULT_CODE_PERIOD;
-        const digits = it.digits ?? Constants.DEFAULT_CODE_DIGITS;
-        const algo = it.algorithm ?? Constants.DEFAULT_CODE_ALGO;
+        const period = it.period ?? defCodePeriod;
+        const digits = it.digits ?? defCodeDigits;
+        const algo = it.algorithm ?? defCodeAlgo;
 
         // counter + rollover detect
         const counter = Math.floor(nowSec / period);
@@ -46,7 +49,7 @@ export default class TotpScheduler implements Injectable {
             const code = await TotpManager.generateTOTPCodeString(it.secret, nowMs, {
               digits: digits,
               interval: period,
-              algo: algo,
+              algo: algo
             });
             this.lastCounter.set(it.id, counter);
             changed.set(it.id, code);
@@ -97,8 +100,9 @@ export default class TotpScheduler implements Injectable {
    */
   private msToSoonestBoundary(items: TotpCode[], nowMs: number): number {
     let best = Infinity;
+    const defCodePeriod = Constants.DEFAULT_CODE_PERIOD;
     for (const it of items) {
-      const periodMs = (it.period ?? Constants.DEFAULT_CODE_PERIOD) * 1000;
+      const periodMs = (it.period ?? defCodePeriod) * 1000;
       const remMs = (periodMs - (nowMs % periodMs)) % periodMs;
       // tiny epsilon to avoid landing *before* boundary due to clock jitter
       const wait = remMs === 0 ? 1 : remMs;

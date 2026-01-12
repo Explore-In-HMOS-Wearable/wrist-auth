@@ -13,7 +13,7 @@ export class AppDatabaseImpl extends AppDatabase {
   constructor(context: Context) {
     super();
     this.readyDatabase = new RDBBuilder({
-      dbName: 'wrist_auth.db',
+      dbName: 'wrist_auth.db'
     })
       .build(context)
       .then((store) => {
@@ -47,7 +47,7 @@ export class AppDatabaseImpl extends AppDatabase {
       'secret': secret,
       'algorithm': algorithm ?? Constants.DEFAULT_CODE_ALGO,
       'digits': digits ?? Constants.DEFAULT_CODE_DIGITS,
-      'period': period ?? Constants.DEFAULT_CODE_PERIOD,
+      'period': period ?? Constants.DEFAULT_CODE_PERIOD
     };
     const totpCodeId = await database.insert(TOTP_CODE_TABLE.tableName, valueBucket);
     if (totpCodeId === -1) {
@@ -68,8 +68,9 @@ export class AppDatabaseImpl extends AppDatabase {
       }
 
       const results: TotpCode[] = [];
+      const createdDate = new Date();
       while (resultSet.goToNextRow()) {
-        const createdDate = new Date(resultSet.getLong(resultSet.getColumnIndex('created_at')));
+        createdDate.setTime(resultSet.getLong(resultSet.getColumnIndex('created_at')))
         const totpCode: TotpCode = {
           id: resultSet.getLong(resultSet.getColumnIndex('id')),
           issuer: resultSet.getString(resultSet.getColumnIndex('issuer')),

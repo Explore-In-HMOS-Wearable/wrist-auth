@@ -85,7 +85,7 @@ export class Base32 {
 
   private static pad(input: string): string {
     const neededPadding = (8 - (input.length % 8)) % 8;
-    return input + '='.repeat(neededPadding);
+    return `${input}=`.repeat(neededPadding);
   }
 
   private static getDecodeMap(): Map<string, number> {

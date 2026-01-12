@@ -29,7 +29,7 @@ export class RDBBuilder {
   public async build(context: Context): Promise<relationalStore.RdbStore> {
     const store = await relationalStore.getRdbStore(context, {
       name: this.rdbName,
-      securityLevel: relationalStore.SecurityLevel.S1,
+      securityLevel: relationalStore.SecurityLevel.S1
     });
     // Fresh DB? Run creation queries once (version 0)
     if (store.version === 0) {

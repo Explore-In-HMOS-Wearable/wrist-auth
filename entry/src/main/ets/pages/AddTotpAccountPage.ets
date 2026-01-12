@@ -4,7 +4,7 @@ import {
   ArcButtonOptions,
   ArcButtonStyleMode,
   ColorMetrics,
-  SymbolGlyphModifier,
+  SymbolGlyphModifier
 } from '@kit.ArkUI';
 import { OptionBuilder } from '../components/OptionBuilder';
 import { SizeConstants } from '../constants/SizeConstants';
@@ -101,7 +101,7 @@ struct AddTotpAccountPage {
             onClick: () => {
               this.issuerOptions = this.issuerOptions.map((opt) => {
                 return copyLabelOption(opt, {
-                  selected: opt.label === option.label ? !opt.selected : false,
+                  selected: opt.label === option.label ? !opt.selected : false
                 });
               });
             }
@@ -129,7 +129,7 @@ struct AddTotpAccountPage {
             onClick: () => {
               this.labelOptions = this.labelOptions.map((opt) => {
                 return copyLabelOption(opt, {
-                  selected: opt.label === option.label ? !opt.selected : false,
+                  selected: opt.label === option.label ? !opt.selected : false
                 });
               });
             }

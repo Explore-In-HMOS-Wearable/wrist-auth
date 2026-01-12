@@ -11,9 +11,9 @@ popular services like Huawei, Google, Microsoft, and GitHub.
 # Preview
 
 <div>
-  <img src="./screenshots/preview_01.png" width="25%">
-  <img src="./screenshots/preview_02.png" width="25%">
-  <img src="./screenshots/preview_03.png" width="25%">
+  <img src="./screenshots/preview_01.png" width="24%">
+  <img src="./screenshots/preview_02.png" width="24%">
+  <img src="./screenshots/preview_03.png" width="24%">
 </div>
 
 # Use Cases

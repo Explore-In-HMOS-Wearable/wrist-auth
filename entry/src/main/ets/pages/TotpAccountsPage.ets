@@ -9,7 +9,7 @@ import {
   ArcButton,
   ArcButtonOptions,
   ArcButtonStyleMode,
-  ColorMetrics,
+  ColorMetrics
 } from '@kit.ArkUI';
 import { AccountDetailsCard } from '../components/AccountDetailsCard';
 import { SizeConstants } from '../constants/SizeConstants';
@@ -110,7 +110,7 @@ struct TotpAccountsPage {
               issuerBGColor: totpCode.issuerBGColor,
               counter: this.viewModel.remaining.get(totpCode.id),
               period: totpCode.period,
-              code: this.viewModel.codes.get(totpCode.id),
+              code: this.viewModel.codes.get(totpCode.id)
             })
           }
           .width(SizeConstants.PERCENT_86)
@@ -122,7 +122,7 @@ struct TotpAccountsPage {
                   this.viewModel.deleteTotpAccount(totpCode);
                 })
               },
-              actionAreaDistance: 56,
+              actionAreaDistance: 56
             }
           })
         }, (totpCode: TotpCode, index: number) => `${totpCode.id}-${index}`)
